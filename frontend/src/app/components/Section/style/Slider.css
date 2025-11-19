@@ -1,0 +1,11 @@
+.slider-container {
+  margin-top: 20px;
+}
+
+.slider-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}

@@ -1,0 +1,32 @@
+.order-status-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+}
+
+.update-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0070f3;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.update-btn:hover {
+  background-color: #0059c1;
+}
+
+.update-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

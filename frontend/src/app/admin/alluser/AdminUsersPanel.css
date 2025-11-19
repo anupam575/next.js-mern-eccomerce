@@ -1,0 +1,211 @@
+/* 🌟 General Layout */
+.admin-users-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #222;
+  font-family: "Inter", sans-serif;
+  background-color: #f9fafb;
+  margin-top:  140px;
+}
+
+/* 🌟 Top Bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.top-bar h2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* 🌟 Loading & Empty States */
+.loading-text,
+.no-data-text {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.1rem;
+  color: #6b7280;
+}
+
+/* 🌟 Table Styles */
+.desktop-users {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.users-table thead {
+  background-color: #2563eb;
+  color: white;
+}
+
+.users-table th,
+.users-table td {
+  text-align: left;
+  padding: 0.9rem 1rem;
+}
+
+.users-table th {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.users-table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.users-table tr:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+/* 🌟 Select (Role Dropdown) */
+.users-table select,
+.user-card select {
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #1e293b;
+}
+
+.users-table select:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+/* 🌟 Buttons */
+.view-btn,
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-btn {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.view-btn:hover {
+  background-color: #bae6fd;
+}
+
+.delete-btn {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.delete-btn:hover {
+  background-color: #fecaca;
+}
+
+/* 🌟 Single User Card */
+.single-user-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.single-user-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.single-user-card p {
+  margin: 0.4rem 0;
+  color: #334155;
+}
+
+/* 🌟 Mobile Layout */
+.mobile-users {
+  display: none;
+}
+
+.user-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+}
+
+.user-card p {
+  margin: 0.3rem 0;
+  color: #1e293b;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+/* 🌟 Responsive */
+@media (max-width: 768px) {
+  .desktop-users {
+    display: none;
+  }
+
+  .mobile-users {
+    display: block;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .top-bar h2 {
+    font-size: 1.2rem;
+  }
+}
