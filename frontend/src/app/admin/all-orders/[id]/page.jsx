@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -17,7 +18,7 @@ const OrderDetailPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // ✅ Fetch Order Details
+  // Fetch Order Details
   const fetchOrderDetails = async () => {
     setLoading(true);
     setError("");
@@ -33,12 +34,10 @@ const OrderDetailPage = () => {
     }
   };
 
-  // ✅ Load once when id changes
   useEffect(() => {
     if (id) fetchOrderDetails();
   }, [id]);
 
-  // ✅ Loading & Error states
   if (loading) return <p style={{ textAlign: "center" }}>⏳ Loading order details...</p>;
   if (error) return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
   if (!order) return <p style={{ textAlign: "center" }}>No order found.</p>;
@@ -57,10 +56,7 @@ const OrderDetailPage = () => {
       {/* Shipping Info */}
       <Section title="Shipping Info">
         <p>
-          <strong>Address:</strong>{" "}
-          {order.shippingInfo?.address}, {order.shippingInfo?.city},{" "}
-          {order.shippingInfo?.state}, {order.shippingInfo?.country} -{" "}
-          {order.shippingInfo?.pinCode}
+          <strong>Address:</strong> {order.shippingInfo?.address}, {order.shippingInfo?.city}, {order.shippingInfo?.state}, {order.shippingInfo?.country} - {order.shippingInfo?.pinCode}
         </p>
         <p><strong>Phone:</strong> {order.shippingInfo?.phoneNo}</p>
       </Section>
@@ -100,10 +96,7 @@ const OrderDetailPage = () => {
       {/* Payment Info */}
       <Section title="Payment Info">
         <p><strong>Status:</strong> {order.paymentInfo?.status || "N/A"}</p>
-        <p>
-          <strong>Paid At:</strong>{" "}
-          {order.paidAt ? new Date(order.paidAt).toLocaleString() : "N/A"}
-        </p>
+        <p><strong>Paid At:</strong> {order.paidAt ? new Date(order.paidAt).toLocaleString() : "N/A"}</p>
       </Section>
 
       {/* Price Summary */}
@@ -117,11 +110,17 @@ const OrderDetailPage = () => {
       {/* Order Status */}
       <Section title="Order Status">
         <p><strong>Status:</strong> {order.orderStatus}</p>
+
         {order.orderStatus === "Delivered" && order.deliveredAt && (
-          <p>
-            <strong>Delivered At:</strong>{" "}
-            {new Date(order.deliveredAt).toLocaleString()}
-          </p>
+          <p><strong>Delivered At:</strong> {new Date(order.deliveredAt).toLocaleString()}</p>
+        )}
+
+        {order.orderStatus === "Soon" && order.soonAt && (
+          <p><strong>Soon At:</strong> {new Date(order.soonAt).toLocaleString()}</p>
+        )}
+
+        {order.orderStatus === "Cancelled" && order.cancelledAt && (
+          <p><strong>Cancelled At:</strong> {new Date(order.cancelledAt).toLocaleString()}</p>
         )}
       </Section>
     </div>
