@@ -176,6 +176,8 @@ export const updateOrder = async (req, res, next) => {
   }
 };
 
+
+
 export async function updateStock(productId, quantity, operation = "decrease") {
   const product = await Product.findById(productId);
   if (!product) throw new Error("Product not found");
@@ -276,3 +278,4 @@ export const deleteOrder = async (req, res, next) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
